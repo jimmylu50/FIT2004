@@ -1,0 +1,17 @@
+    max_array = []
+    max_list = []
+        max_array.append([])
+max_array[i].append(0)
+
+max_val = 0
+    for i in range(len(M)):
+        for j in range(len(M[0])):
+            #O(nm)
+            #dp_walk(M, i, j, dp_array,confirm_array, directions)
+            for k in range(len(directions)):
+                r = directions[k][0] + i
+                c = directions[k][1] + j
+                if 0<= r < len(M) and 0<= c < len(M[0]) and M[i][j] > M[r][c]:
+                    max_array[i][j] = max(max_array[i][j], max_array[r][c]+1)
+                
+    return max_array
